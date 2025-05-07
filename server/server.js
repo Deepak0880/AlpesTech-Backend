@@ -313,17 +313,6 @@ if (cluster.isMaster) {
   app.use('/api/courses', courseRoutes);
   app.use('/api', assignmentRoutes);
 
-  // In production, serve static files from the build directory
-  if (isProduction) {
-    // Serve static files from the React build
-    app.use(express.static(path.join(__dirname, '../dist')));
-
-    // Handle all other routes by serving the React app
-    app.get('*', (req, res) => {
-      res.sendFile(path.join(__dirname, '../dist/index.html'));
-    });
-  }
-
   // Global error handler for Multer and all errors
   app.use((err, req, res, next) => {
     const multer = require('multer');
