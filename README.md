@@ -3,7 +3,6 @@
 **AlpesTech** is an innovative and scalable educational management system built to modernize how educational institutions operate. Designed for both **administrators** and **students**, AlpesTech provides dedicated portals to simplify academic operations, enhance transparency, and improve the learning journey.
 
 Whether you are managing a university, coaching center, or e-learning platform, AlpesTech offers a flexible architecture and intuitive interfaces for managing courses, monitoring progress, and tracking academic performance — all in one place.
----
 
 ## 🛠️ Tech Stack
 
