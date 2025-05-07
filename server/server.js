@@ -34,7 +34,7 @@ if (cluster.isMaster) {
   // CORS configuration
   const corsOptions = {
     origin: isProduction 
-      ? [process.env.CLIENT_URL || 'https://alpstech-learning.vercel.app'] 
+      ? [process.env.CLIENT_URL || 'https://alpes-tech.vercel.app/'] 
       : ['http://localhost:8080', 'http://localhost:3000'],
     credentials: true,
     optionsSuccessStatus: 200
