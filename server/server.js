@@ -103,8 +103,8 @@ if (cluster.isMaster) {
   const studentRouter = require('./routes/student');
   const assignmentRoutes = require('./routes/assignments');
   // MongoDB Connection
-  const uri = process.env.MONGO_URI;
-  console.log('MongoDB URI configured:', uri ? 'Yes' : 'No');
+const uri = process.env.MONGO_URI || process.env.VITE_MONGO_URI;
+console.log('MongoDB URI configured:', uri ? 'Yes' : 'No');
 
   const client = new MongoClient(uri, {
     maxPoolSize: 10,
