@@ -25,6 +25,7 @@ if (cluster.isMaster) {
   });
 } else {
   const app = express();
+  app.set('trust proxy', 1);
   const PORT = process.env.PORT || 5000;
   const NODE_ENV = process.env.NODE_ENV || 'development';
   const isProduction = NODE_ENV === 'production';
@@ -315,17 +316,6 @@ console.log('MongoDB URI configured:', uri ? 'Yes' : 'No');
   app.use('/api/student', studentRouter);
   app.use('/api/courses', courseRoutes);
   app.use('/api', assignmentRoutes);
-
-  // In production, serve static files from the build directory
-  if (isProduction) {
-    // Serve static files from the React build
-    app.use(express.static(path.join(__dirname, '../dist')));
-
-    // Handle all other routes by serving the React app
-    app.get('*', (req, res) => {
-      res.sendFile(path.join(__dirname, '../dist/index.html'));
-    });
-  }
 
   // Global error handler for Multer and all errors
   app.use((err, req, res, next) => {
